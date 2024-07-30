@@ -1,23 +1,17 @@
+YugaByte Python Driver for YugaByte DB's Cassandra compatible YCQL API
+======================================================================
 
-.. |license| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
-    :target: https://opensource.org/licenses/Apache-2.0
-.. |version| image:: https://badge.fury.io/py/cassandra-driver.svg
-    :target: https://badge.fury.io/py/cassandra-driver
-.. |pyversion| image:: https://img.shields.io/pypi/pyversions/cassandra-driver.svg
-.. |travis| image:: https://api.travis-ci.com/datastax/python-driver.svg?branch=master
-    :target: https://travis-ci.com/github/datastax/python-driver
 
-|license| |version| |pyversion| |travis|
-
-Apache Cassandra Python Driver
-==============================
-
-A modern, `feature-rich <https://github.com/datastax/python-driver#features>`_ and highly-tunable Python client library for Apache Cassandra (2.1+) and
-DataStax Enterprise (4.7+) using exclusively Cassandra's binary protocol and Cassandra Query Language v3.
+A modern, `feature-rich <https://github.com/yugabyte/cassandra-python-driver#features>`_ and highly-tunable Python client library for YugaByte DB's Cassandra compatible YCQL API using Cassandra's binary protocol and Cassandra Query Language v3.
 
 The driver supports Python 3.10 through 3.14.
 
-**Note:** DataStax products do not support big-endian systems.
+
+**Note:** This driver does not support big-endian systems.
+
+Feedback Requested
+------------------
+Please provide feedback by opening an issue on github.
 
 Features
 --------
@@ -39,48 +33,39 @@ Installation
 ------------
 Installation through pip is recommended::
 
-    $ pip install cassandra-driver
+    $ pip install yb-cassandra-driver
 
 For more complete installation instructions, see the
 `installation guide <https://docs.datastax.com/en/developer/python-driver/latest/installation/index.html>`_.
 
 Documentation
 -------------
-The documentation can be found online `here <https://docs.datastax.com/en/developer/python-driver/latest/index.html>`_.
-
 A couple of links for getting up to speed:
 
-* `Installation <https://docs.datastax.com/en/developer/python-driver/latest/installation/index.html>`_
-* `Getting started guide <https://docs.datastax.com/en/developer/python-driver/latest/getting_started/index.html>`_
-* `API docs <https://docs.datastax.com/en/developer/python-driver/latest/api/index.html>`_
-* `Performance tips <https://docs.datastax.com/en/developer/python-driver/latest/performance/index.html>`_
+* `Getting started guide <https://docs.yugabyte.com/latest/develop/client-drivers/python/>`_
+* `API docs <http://datastax.github.io/python-driver/api/index.html>`_
+* `Performance tips <http://datastax.github.io/python-driver/performance.html>`_
 
-Object Mapper
--------------
-cqlengine (originally developed by Blake Eggleston and Jon Haddad, with contributions from the
-community) is now maintained as an integral part of this package. Refer to
-`documentation here <https://docs.datastax.com/en/developer/python-driver/latest/object_mapper/index.html>`_.
 
 Contributing
 ------------
-See `CONTRIBUTING.rst <https://github.com/datastax/python-driver/blob/master/CONTRIBUTING.rst>`_.
+See `CONTRIBUTING.md <https://github.com/YugaByte/cassandra-python-driver/blob/master/CONTRIBUTING.rst>`_.
+
+Error Handling
+--------------
+While originally written for the Java driver, users may reference the `Cassandra error handling done right blog <https://www.datastax.com/blog/cassandra-error-handling-done-right>`_ for resolving error handling scenarios with Apache Cassandra.
 
 Reporting Problems
 ------------------
-Please report any bugs and make any feature requests on the
-`CASSPYTHON project <https://issues.apache.org/jira/issues/?jql=project%20%3D%20CASSPYTHON%20ORDER%20BY%20key%20DESC>`_
-of the ASF JIRA.
-
-If you would like to contribute, please feel free to open a pull request.
+Please report any bugs and make any feature requests on github.
 
 Getting Help
 ------------
-You can talk about the driver, ask questions and get help in the #cassandra-drivers channel on 
-`ASF Slack <https://the-asf.slack.com/>`_.
+For help on this product, please open a github issue.
 
 License
 -------
-Copyright 2013 The Apache Software Foundation
+Copyright 2018, YugaByte Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

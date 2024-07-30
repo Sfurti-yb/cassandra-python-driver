@@ -24,7 +24,8 @@ class NullHandler(logging.Handler):
 
 logging.getLogger('cassandra').addHandler(NullHandler())
 
-__version__ = importlib.metadata.version('cassandra-driver')
+__version_info__ = (3, 30, 1, 1)
+__version__ = '.'.join(map(str, __version_info__))
 
 class ConsistencyLevel(object):
     """

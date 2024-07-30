@@ -30,6 +30,7 @@ cdef enum:
     UUIDType
     VarcharType
     IntegerType
+    JsonType
     TimeUUIDType
     InetAddressType
     SimpleDateType

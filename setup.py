@@ -118,7 +118,52 @@ if try_cython:
         sys.stderr.write("Failed to cythonize one or more modules. These will not be compiled as extensions (optional).\n")
         sys.stderr.write("Cython error: %s\n" % exc)
 
+# ========================== YugaByte metadata override ==========================
+# Import version from cassandra/__init__.py
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'cassandra'))
+import cassandra
+__version__ = cassandra.__version__
+
 # ========================== And finally setup() itself ==========================
 setup(
-    ext_modules = exts
+    name='yb-cassandra-driver',
+    version=__version__,
+    description='DataStax Driver for YCQL YugabyteDB',
+    url='http://github.com/yugaByte/cassandra-python-driver',
+    project_urls={
+        'Documentation': 'https://docs.yugabyte.com/stable/drivers-orms/python/ycql/',
+        'Source': 'https://github.com/yugabyte/cassandra-python-driver/',
+    },
+    author='yugabyte',
+    author_email='pypi@yugabyte.com',
+    packages=[
+        'cassandra', 'cassandra.io', 'cassandra.cqlengine', 'cassandra.graph',
+        'cassandra.datastax', 'cassandra.datastax.insights', 'cassandra.datastax.graph',
+        'cassandra.datastax.graph.fluent', 'cassandra.datastax.cloud',
+        "cassandra.column_encryption"
+    ],
+    keywords='cassandra,cql,orm',
+    include_package_data=True,
+    install_requires=['geomet>=1.1', "Deprecated>=1.3.1"],
+    extras_require={
+        'graph': ['gremlinpython==3.4.6'],
+        'cle': ['cryptography>=42.0']
+    },
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+        'Topic :: Software Development :: Libraries :: Python Modules'
+    ],
+    ext_modules=exts
 )
